@@ -1,12 +1,12 @@
 module "vpc" {
-  source = "git@github.com:rubber-duckie-chainsaws/tf-primitives//aws/infra/vpc?rev=main"
+  source = "git@github.com:rubber-duckie-chainsaws/tf-primitives//aws/infra/vpc?ref=main"
 
   name = var.name
   cidr_block = var.cidr_block
 }
 
 module "public" {
-  source = "git@github.com:rubber-duckie-chainsaws/tf-primitives//aws/infra/subnet?rev=main"
+  source = "git@github.com:rubber-duckie-chainsaws/tf-primitives//aws/infra/subnet?ref=main"
 
   vpc_id = module.vpc.id
   name = "${var.name}-public"

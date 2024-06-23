@@ -1,5 +1,5 @@
 module "asg" {
-  source                  = "git@github.com:rubber-duckie-chainsaws/tf-primitives//aws/ec2/asg?rev=main"
+  source                  = "git@github.com:rubber-duckie-chainsaws/tf-primitives//aws/ec2/asg?ref=main"
   name                    = var.name
   desired_capacity        = var.desired_capacity
   max_size                = var.max_size
@@ -11,7 +11,7 @@ module "asg" {
 }
 
 module "launch_template" {
-  source                 = "git@github.com:rubber-duckie-chainsaws/tf-primitives//aws/ec2/lt?rev=main"
+  source                 = "git@github.com:rubber-duckie-chainsaws/tf-primitives//aws/ec2/lt?ref=main"
   name                   = var.name
   env                    = var.env
   class                  = var.class
