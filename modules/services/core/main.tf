@@ -1,12 +1,12 @@
 module "vpc" {
-  source = "../../primitives/infra/vpc"
+  source = "git@github.com:rubber-duckie-chainsaws/tf-primitives/aws/infra/vpc"
 
   name = var.name
   cidr_block = var.cidr_block
 }
 
 module "public" {
-  source = "../../primitives/infra/subnet"
+  source = "git@github.com:rubber-duckie-chainsaws/tf-primitives/aws/infra/subnet"
 
   vpc_id = module.vpc.id
   name = "${var.name}-public"
